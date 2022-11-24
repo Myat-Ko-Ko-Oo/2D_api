@@ -104,32 +104,35 @@
 //     }
 
 const url = "https://script.googleusercontent.com/macros/echo?user_content_key=aFmrwmN3cktgX7xj2LUkI5yeI_9E4ipm6BucuuvFsS6DMCDWT41EKvWULc3Rae9UxrBgxn659C8npxJxVDak2arsyr5WM7rxm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnC7K1-JlBuwIagA7l-0nGocjXCuqGtBIBlLD60O69uun8AvaaoLDNKKmiiZlk_fNO9OT1G_8Nrrl8D9Xx-cAUk8mp58OgYhW-w&lib=MbpkQ2ixoOBdRxkFnQbAbbhIFd7mr9JzV";
-    fetch(url)
-    // .then((response)=>{
-    //     const responseData = response.json();
-    //     return responseData;
-    // }).then((array_response)=>{
-    //     array= array_response;
-    //     run();
-    //     // console.log(array);
-    // })
-    // .catch((error)=>{
-    //     console.log(error);
-    // })
+    interval = ()=>{fetch(url)
+    .then((response)=>{
+        const responseData = response.json();
+        return responseData;
+    }).then((array_response)=>{
+        array= array_response;
+        run();
+        // console.log(array);
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+}
     // console.log(array);
-    let array;
-    const buildUI = async () =>{
-        const responses = await fetch(url)
-        response = responses.json()
-        console.log(response)
-        const userdata = await response
-        console.log(userdata)
-        array = userdata
-        run()
-     }
+    // let array;
+    // const buildUI = async () =>{
+    //     const responses = await fetch(url)
+    //     response = responses.json()
+    //     console.log(response)
+    //     const userdata = await response
+    //     console.log(userdata)
+    //     array = userdata
+    //     run()
+    //  }
 
- buildUI()
-  
+//  buildUI()
+  setInterval(() => {
+    interval()
+  }, 10000);
     run=()=>{
     set  = array['GoogleSheetData'][1][1]
     console.log(set);
