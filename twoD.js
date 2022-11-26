@@ -103,20 +103,17 @@
 //     ]
 //     }
 
-const url = "https://script.googleusercontent.com/macros/echo?user_content_key=aFmrwmN3cktgX7xj2LUkI5yeI_9E4ipm6BucuuvFsS6DMCDWT41EKvWULc3Rae9UxrBgxn659C8npxJxVDak2arsyr5WM7rxm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnC7K1-JlBuwIagA7l-0nGocjXCuqGtBIBlLD60O69uun8AvaaoLDNKKmiiZlk_fNO9OT1G_8Nrrl8D9Xx-cAUk8mp58OgYhW-w&lib=MbpkQ2ixoOBdRxkFnQbAbbhIFd7mr9JzV";
-    interval = ()=>{fetch(url)
-    .then((response)=>{
-        const responseData = response.json();
-        return responseData;
-    }).then((array_response)=>{
-        array= array_response;
-        run();
-        // console.log(array);
-    })
-    .catch((error)=>{
-        console.log(error);
-    })
-}
+const url = "https://script.googleusercontent.com/macros/echo?user_content_key=hVrn3Ulul6UaUOC8rh9kiAbk3z6EbpHsdG8lD-Fg7y5S23U3yzQUHpIxS6ivWyEtzQXUuxd3Z_PChF21mTk9LRJKXCx3RFSCm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnLeAt4fwEj9n7XMm8vvGrxQp2nGWh_GsWiFqJJbRNihBwpMDuNYu1pMu55KMbRtiAhSg_Csd7_q-xzvJW-ck2XPZeqtKjwkCk9z9Jw9Md8uu&lib=MMCP5uA-rpTL_Fb5yE0eBOaYEaSESECOi";
+   interval=()=>{fetch(url)
+    .then(response=>
+        response.json()).then(array_response=>
+            array= array_response
+        )
+         
+          console.log(array);
+         run();
+  
+   }
     // console.log(array);
     // let array;
     // const buildUI = async () =>{
@@ -130,9 +127,10 @@ const url = "https://script.googleusercontent.com/macros/echo?user_content_key=a
     //  }
 
 //  buildUI()
-  setInterval(() => {
+   setInterval(() => {
     interval()
-  }, 10000);
+   }, 2000);
+    jsonarray = [];
     run=()=>{
     set  = array['GoogleSheetData'][1][1]
     console.log(set);
@@ -150,4 +148,8 @@ const url = "https://script.googleusercontent.com/macros/echo?user_content_key=a
     document.querySelector("#set").textContent = `${set}`
     document.querySelector("#value").textContent = `${value}`
     // console.log(new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()==="2:48:00");
-    }
+    // jsonarray.push(result,result_1_split,result_2_split)
+    //     json=JSON.stringify(jsonarray)
+    //     console.log(json);
+}
+
